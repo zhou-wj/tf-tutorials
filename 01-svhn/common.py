@@ -5,7 +5,7 @@
 # Purpose : configure the settings of 01-svhn
 # Creation Date : 2019-02-19 10:30
 # Last Modified :
-# Created By : sunpeiqin (sunpeiqin@megvii.com)
+# Created By : sunpeiqin
 # =======================================
 
 import os

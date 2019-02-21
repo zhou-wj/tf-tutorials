@@ -5,7 +5,7 @@
 # Purpose : generate samples for train and test
 # Creation Date : 2019-02-19 10:35
 # Last Modified :
-# Created By : sunpeiqin (sunpeiqin@megvii.com)
+# Created By : sunpeiqin
 # =======================================
 
 import os

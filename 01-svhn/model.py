@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 # =======================================
 # File Name : model.py
-# Purpose :
-# Creation Date :
+# Purpose : build a compute graph
+# Creation Date : 2019-02-19 18:57
 # Last Modified :
-# Created By : sunpeiqin (sunpeiqin@megvii.com)
+# Created By : sunpeiqin
 # =======================================
 
 import tensorflow as tf

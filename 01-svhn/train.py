@@ -5,7 +5,7 @@
 # Purpose : run a session for training
 # Creation Date : 2019-02-19 15:55
 # Last Modified :
-# Created By : sunpeiqin (sunpeiqin@megvii.com)
+# Created By : sunpeiqin
 # =======================================
 
 import os
