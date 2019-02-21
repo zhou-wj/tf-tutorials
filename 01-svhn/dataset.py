@@ -16,7 +16,7 @@ from scipy import io as scio
 from common import config
 
 class Dataset():
-    dataset_path = '../dataset/SVHN'
+    dataset_path = '../../dataset/SVHN'
 
     def __init__(self, dataset_name):
         self.minibatch_size = config.minibatch_size
