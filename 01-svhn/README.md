@@ -2,8 +2,8 @@
 - a project for SVHN(Street View House Numbers) classification  
 
 ## Data examples
-[!train-data](images/train_data.png)
-[!test-data](images/test_data.png)
+![train-data](images/train_data.png)
+![test-data](images/test_data.png)
 
 ## Training commands
 - training from scratch:  python train.py
