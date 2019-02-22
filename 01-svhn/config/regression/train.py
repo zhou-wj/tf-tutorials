@@ -36,7 +36,7 @@ def main():
     parser.add_argument('-l', '--loss', default='softmax')
     args = parser.parse_args()
 
-    assert args.loss in ['softmax', 'abs-max', 'square-max', 'plus-one-abs-max', 'non-negative-max']
+    assert args.loss in ['softmax', 'abs-max', 'square-max', 'plus-one-abs-max', 'non-negative-max', 'regression']
 
     ## load dataset
     train_batch_gnr, train_set = get_dataset_batch(ds_name='train')
@@ -46,7 +46,7 @@ def main():
     network = Model()
     placeholders, label_onehot, logits = network.bulid()
 
-    if args.loss == 'softmax':
+    if args.loss == 'softmax' or args.loss == 'regression':
         preds = tf.nn.softmax(logits)
     elif args.loss == 'abs-max':
         abs_logits = tf.abs(logits)
@@ -67,7 +67,11 @@ def main():
                             tf.cast(tf.argmax(label_onehot, 1), dtype=tf.int32))
     accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
     loss_reg = tf.add_n(tf.get_collection(tf.GraphKeys.REGULARIZATION_LOSSES))
-    loss = tf.losses.softmax_cross_entropy(label_onehot, logits) + loss_reg
+
+    if args.loss == 'regression':
+        loss = tf.reduce_mean(tf.reduce_sum(tf.square(preds - tf.cast(label_onehot, dtype=tf.float32)), axis=1))
+    else:
+        loss = tf.losses.softmax_cross_entropy(label_onehot, logits) + loss_reg
 
     ## train config
     global_steps = tf.Variable(0, trainable=False)
