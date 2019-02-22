@@ -6,10 +6,8 @@
 [!test-data](images/test_data.png)
 
 ## Training commands
-- training from scratch: 
-> python train.py
-- training from checkpoint: 
-> python train.py -c train\_log/models
+- training from scratch:  python train.py
+- training from checkpoint:  python train.py -c train\_log/models
 
 ## Tensorboard commands
 > tensorboard --logdir ./trai\_log/tf\_log/
