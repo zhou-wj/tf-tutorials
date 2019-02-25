@@ -18,7 +18,7 @@
 ## Questions
 - #### Q1: Finding alternatives of softmax
 
-  <img src="./find_soft.png" width="500px"/>
+  <img src="./images/find_soft.png" width="500px"/>
 
 - #### Q2: Regression vs Classification
 
