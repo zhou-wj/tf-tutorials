@@ -2,7 +2,7 @@
 - Learn to do control experiments
 - Learn there are alternatives to Softmax/Cross Entropy when training DNN
 ## Data and GPU resources
-- We provide six servers, each server has eight Nvidia GPU for students to do all the experiments.
+- We provide some servers, each server has eight Nvidia GPU for students to do all the experiments.
 - **python** and **tensorflow** has already been installed.
 - **~/course/dataset** has all the data for each assignment. For example **~/course/datasest/SVHN/** contains train and test data for homework1.
 - **~/course/tutorial** has the start code we provide for each assignment. Start code for SVHN is in **~/course/tutorial/01-SVHN**
