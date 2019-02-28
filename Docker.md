@@ -14,7 +14,7 @@ nvidia-docker run -it -v /home/student/course/:/root/course/ -v /home/student/st
 
 e.g.  `nvidia-docker run -it -v /home/student/course/:/root/course/ -v /home/student/students/chenghao/:/root/chenghao --name=1801213964 ufoym/deepo:tensorflow-py36-cu90 bash `
 
-Then you can run your code in the container.
+Then you can run your code in the container. **The code is in /root/course. **
 
 To use opencv package, you need to install it in your container.
 
