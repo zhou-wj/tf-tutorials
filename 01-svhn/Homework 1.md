@@ -1,4 +1,9 @@
 # Homework 1
+
+## Requirement
+- The work has to be finished individually. Plagiarism will be dealt with seriously.
+
+## Goals
 - Learn to do control experiments
 - Learn there are alternatives to Softmax/Cross Entropy when training DNN
 
