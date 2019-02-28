@@ -50,6 +50,6 @@ A: The algorithm is TBD.
   - Try Lp regularization with different p.
   - Set Lp regularization to a minus number. (L_model + L_reg to L_model - L_reg)
 
-- #### Where to find data file?
-  - [SVHN](http://ufldl.stanford.edu/housenumbers/)
+- #### Q5: Where to find dataset files?
+  - Open http://ufldl.stanford.edu/housenumbers
   - Please down format2. (train\_32x32.mat, test\_32x32.mat, extra\_32x32.mat)
