@@ -17,7 +17,12 @@ A: We'll discuss the homework in succeeding experiment course (every two week). 
 Q: How will the score of each homework affect final course score?
 A: The algorithm is TBD.
 
-## Data and GPU resources
+## Data
+Those files in dataset.py are training/test data: train_32x32.mat, test_32x32.mat , extra_32x32.mat .
+They can be downloaded from http://ufldl.stanford.edu/housenumbers/
+Note we use Format 2 (Cropped Digits).
+
+## GPU servers
 - We provide some servers, each server has eight Nvidia GPU for students to do all the experiments.
 - **python** and **tensorflow** has already been installed.
 - **~/course/dataset** has all the data for each assignment. For example **~/course/datasest/SVHN/** contains train and test data for homework1.
