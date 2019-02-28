@@ -1,6 +1,17 @@
 # Homework 1
 - Learn to do control experiments
 - Learn there are alternatives to Softmax/Cross Entropy when training DNN
+
+## FAQ
+Q: Where can I get support for this homework?
+A: Use "Issues" of this repo.
+
+Q: What's the DDL for homeworks?
+A: We'll discuss the homework in succeeding experiment course (every two week). Those homeworks turned in after discussion will be capped at 90 marks.
+
+Q: How will the score of each homework affect final course score?
+A: The algorithm is TBD.
+
 ## Data and GPU resources
 - We provide some servers, each server has eight Nvidia GPU for students to do all the experiments.
 - **python** and **tensorflow** has already been installed.
