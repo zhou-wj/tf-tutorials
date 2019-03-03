@@ -16,14 +16,17 @@ from scipy import io as scio
 from common import config
 
 class Dataset():
-    dataset_path = '../../dataset/SVHN'
+    #dataset_path = '../../dataset/SVHN'
+    dataset_path = '/root/dataset/SVHN'
+
 
     def __init__(self, dataset_name):
         self.minibatch_size = config.minibatch_size
         self.ds_name = dataset_name
         dataset_meta = {
-            'train': ([os.path.join(self.dataset_path, 'train_32x32.mat'),
-                       os.path.join(self.dataset_path, 'extra_32x32.mat')], 604388),
+            #'train': ([os.path.join(self.dataset_path, 'train_32x32.mat'),
+            #           os.path.join(self.dataset_path, 'extra_32x32.mat')], 604388),
+            'train': ([os.path.join(self.dataset_path, 'train_32x32.mat')], 73257),
             'test': ([os.path.join(self.dataset_path, 'test_32x32.mat')], 26032),
         }
         self.files, self.instances = dataset_meta[dataset_name]
