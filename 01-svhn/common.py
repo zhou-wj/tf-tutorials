@@ -1,4 +1,4 @@
-#!/usr/bin/env mdl
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # =======================================
 # File Name : common.py
