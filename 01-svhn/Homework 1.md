@@ -8,17 +8,17 @@
 - Learn there are alternatives to Softmax/Cross Entropy when training DNN
 
 ## FAQ
-Q: Where can I get support for this homework?
+#### Q: Where can I get support for this homework?
 A: Use "Issues" of this repo.
 
-Q: What's the DDL for homeworks?
+#### Q: What's the DDL for homeworks?
 A: We'll discuss the homework in succeeding experiment course (every two week). Those homeworks turned in after discussion will be capped at 90 marks.
 
-Q: How will the score of each homework affect final course score?
+#### Q: How will the score of each homework affect final course score?
 A: The algorithm is TBD.
 
-Q: How to choose use extra\_32x32.mat in experiments ?
-A: Find a file called common.py in 01-svhn, then set use\_extra\_data = False or True to control.
+#### Q: I don't have access to a GPU. How do I finish homework in time?
+A: You can choose to skip extra\_32x32.mat when trainining. Find a file called common.py in 01-svhn, then set use\_extra\_data = False or True to control.
 
 ## GPU servers
 - We provide some servers, each server has eight Nvidia GPU for students to do all the experiments.
@@ -55,4 +55,4 @@ A: Find a file called common.py in 01-svhn, then set use\_extra\_data = False or
 
 - #### Q5: Where to find dataset files?
   - Open http://ufldl.stanford.edu/housenumbers
-  - Please down format2. (train\_32x32.mat, test\_32x32.mat, extra\_32x32.mat)
+  - Please download format2 data. (train\_32x32.mat, test\_32x32.mat, extra\_32x32.mat)
