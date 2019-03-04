@@ -23,10 +23,14 @@ class Dataset():
     def __init__(self, dataset_name):
         self.minibatch_size = config.minibatch_size
         self.ds_name = dataset_name
+        if config.use_extra_data:
+            train_meta = ([os.path.join(self.dataset_path, 'train_32x32.mat'),
+                           os.path.join(self.dataset_path, 'extra_32x32.mat')], 604388)
+        else:
+            train_meta = ([os.path.join(self.dataset_path, 'train_32x32.mat')], 73257)
+
         dataset_meta = {
-            #'train': ([os.path.join(self.dataset_path, 'train_32x32.mat'),
-            #           os.path.join(self.dataset_path, 'extra_32x32.mat')], 604388),
-            'train': ([os.path.join(self.dataset_path, 'train_32x32.mat')], 73257),
+            'train': train_meta,
             'test': ([os.path.join(self.dataset_path, 'test_32x32.mat')], 26032),
         }
         self.files, self.instances = dataset_meta[dataset_name]
@@ -60,8 +64,7 @@ class Dataset():
             if label == 10:
                 label = 0
             img = cv2.resize(img, config.image_shape)
-            img_chw = np.transpose(img, (2, 0, 1))
-            yield img_chw.astype(np.float32), np.array(label, dtype=np.int32)
+            yield img.astype(np.float32), np.array(label, dtype=np.int32)
 
 
 if __name__ == "__main__":
@@ -72,8 +75,7 @@ if __name__ == "__main__":
     imggrid = []
     while True:
         for i in range(25):
-            img_chw, label = next(gen)
-            img = np.transpose(img_chw, (1, 2, 0))
+            img, label = next(gen)
             cv2.putText(img, str(label), (0, config.image_shape[0]), cv2.FONT_HERSHEY_SIMPLEX,
                         1, (0, 255, 0), 2)
             imggrid.append(img)

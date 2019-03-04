@@ -27,21 +27,21 @@ class Model():
                                           initializer=self.weight_init, regularizer=self.reg)
             conv_bias = tf.get_variable(name='bias', shape=kernel_shape[-1],
                                         initializer=self.bias_init)
-            x = tf.nn.conv2d(inp, conv_filter, strides=[1, 1, stride, stride],
-                             padding=padding, data_format='NCHW')
-            x = tf.nn.bias_add(x, conv_bias, data_format='NCHW')
-            x = tf.layers.batch_normalization(x, axis=1, training=is_training)
+            x = tf.nn.conv2d(inp, conv_filter, strides=[1, stride, stride, 1],
+                             padding=padding, data_format='NHWC')
+            x = tf.nn.bias_add(x, conv_bias, data_format='NHWC')
+            x = tf.layers.batch_normalization(x, axis=3, training=is_training)
             x = tf.nn.relu(x)
         return x
 
     def _pool_layer(self, name, inp, ksize, stride, padding='SAME', mode='MAX'):
         assert mode in ['MAX', 'AVG'], 'the mode of pool must be MAX or AVG'
         if mode == 'MAX':
-            x = tf.nn.max_pool(inp, ksize=[1, 1, ksize, ksize], strides=[1, 1, stride, stride],
-                               padding=padding, name=name, data_format='NCHW')
+            x = tf.nn.max_pool(inp, ksize=[1, ksize, ksize, 1], strides=[1, stride, stride, 1],
+                               padding=padding, name=name, data_format='NHWC')
         elif mode == 'AVG':
-            x = tf.nn.avg_pool(inp, ksize=[1, 1, ksize, ksize], strides=[1, 1, stride, stride],
-                               padding=padding, name=name, data_format='NCHW')
+            x = tf.nn.avg_pool(inp, ksize=[1, ksize, ksize, 1], strides=[1, stride, stride, 1],
+                               padding=padding, name=name, data_format='NHWC')
         return x
 
     def _fc_layer(self, name, inp, units, dropout=0.5):
@@ -62,7 +62,8 @@ class Model():
     #    return x
 
     def bulid(self):
-        data = tf.placeholder(tf.float32, shape=(None, config.nr_channel)+config.image_shape, name='data')
+        data = tf.placeholder(tf.float32, shape=(None,)+config.image_shape+(config.nr_channel,),
+                              name='data')
         label = tf.placeholder(tf.int32, shape=(None,), name='label')
         # convert the format of label to one-hot
         label_onehot = tf.one_hot(label, config.nr_class, dtype=tf.int32)
