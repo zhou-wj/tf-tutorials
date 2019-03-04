@@ -30,6 +30,8 @@ class Config:
     snapshot_interval = 2
     test_interval = 1
 
+    use_extra_data = True
+
     @property
     def input_shape(self):
         return (self.minibatch_size, self.nr_channel) + self.image_shape
