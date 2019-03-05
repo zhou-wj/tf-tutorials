@@ -23,16 +23,12 @@ A: Find a file called common.py in 01-svhn, then set use\_extra\_data = False or
 ## GPU servers
 - We provide some servers, each server has eight Nvidia GPU for students to do all the experiments.
 - **python** and **tensorflow** has already been installed.
-- **~/course/dataset** has all the data for each assignment. For example **~/course/datasest/SVHN/** contains train and test data for homework1.
-- **~/course/tutorial** has the start code we provide for each assignment. Start code for SVHN is in **~/course/tutorial/01-SVHN**
-- **~/students** is used for writing your own code. 
-        - First build a directory under **~/students/** using your own name, e.g. **~/students/zhaoyuekai**
-        - Then copy the start code we provide to your own directory.
-        - **Do not make any change to files under ~/course directory!!**
+- Everyone will be assign a IP address and a port number to log in a docker on servers.
+- You can read Docker.md for more information.
 
 ## Warnings
 - **Do not use the computation resource for your private project!!**
-- **Do not let anyone who has not selected this course know the username and password of our servers!!**
+- **Do not let anyone who has not selected this course know the username and password of your docker!!**
 
 ## Questions
 - #### Q1: Finding alternatives of softmax
