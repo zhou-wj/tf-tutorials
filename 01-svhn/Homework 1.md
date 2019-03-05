@@ -8,17 +8,20 @@
 - Learn there are alternatives to Softmax/Cross Entropy when training DNN
 
 ## FAQ
-Q: Where can I get support for this homework?
+#### Q: Where can I get support for this homework?
 A: Use "Issues" of this repo.
 
-Q: What's the DDL for homeworks?
+#### Q: What's the DDL for homeworks?
 A: We'll discuss the homework in succeeding experiment course (every two week). Those homeworks turned in after discussion will be capped at 90 marks.
 
-Q: How will the score of each homework affect final course score?
+#### Q: How will the score of each homework affect final course score?
 A: The algorithm is TBD.
 
-Q: How to choose use extra\_32x32.mat in experiments ?
-A: Find a file called common.py in 01-svhn, then set use\_extra\_data = False or True to control.
+#### Q: I don't have access to a GPU. How do I finish homework in time?
+A: You can choose to skip extra\_32x32.mat when trainining. Find a file called common.py in 01-svhn, then set use\_extra\_data = False or True to control.
+
+#### Q: Where to find dataset files?
+A: Open http://ufldl.stanford.edu/housenumbers . Please download format2 data. (train\_32x32.mat, test\_32x32.mat, extra\_32x32.mat)
 
 ## GPU servers
 - We provide some servers, each server has eight Nvidia GPU for students to do all the experiments.
@@ -32,23 +35,18 @@ A: Find a file called common.py in 01-svhn, then set use\_extra\_data = False or
 
 ## Questions
 - #### Q1: Finding alternatives of softmax
+**(Should be named as q1.1.diff q1.2.diff q1.3.diff q1.4.diff)**
 
   <img src="./images/find_soft.png" width="500px"/>
 
-- #### Q2: Regression vs Classification
-
+- #### Q2: Regression vs Classification **(Should be named as q2.diff)**
   - Change cross entropy loss to the square of euclidean distance between model predicted probability and one hot vector of the true label.
 
-- #### Q3: Lp pooling
-
+- #### Q3: Lp pooling **(Should be named as q3.diff)**
   - Change all pooling layers to Lp pooling
   - Descriptions about Lp pooling is at https://www.computer.org/csdl/proceedings/icpr/2012/2216/00/06460867.pdf
 
 - #### Q4: Regularization
+  - Try Lp regularization with different p. **(Pick one number p with best accuracy and name as q4.1.diff)**
+  - Set Lp regularization to a minus number. (L_model + L_reg to L_model - L_reg) **(Should be named as q4.2.diff)**
 
-  - Try Lp regularization with different p.
-  - Set Lp regularization to a minus number. (L_model + L_reg to L_model - L_reg)
-
-- #### Q5: Where to find dataset files?
-  - Open http://ufldl.stanford.edu/housenumbers
-  - Please down format2. (train\_32x32.mat, test\_32x32.mat, extra\_32x32.mat)
